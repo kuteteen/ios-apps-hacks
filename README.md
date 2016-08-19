@@ -6,6 +6,8 @@ Hack Tweaks for iOS apps
  - [ ] Javvy - Learn how to code in Java!
  - [ ] Swifty - Learn how to code with interactive tutorials for Swift
  - [ ] PHP Bites - Learn How to Code in PHP with Interactive Mini Lessons
+ - [ ] SwiftBites - Learn How to Code in Swift with Interactive Mini Lessons
+ - [ ] Code! Learn how to program - Swift Version
  - [X] Cute Cut
  - [ ] Glitché
 
