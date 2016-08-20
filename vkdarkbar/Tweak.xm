@@ -2,19 +2,39 @@
 
 %hook AuthToken
 
+NSString* myAccessToken;
+UIColor* barColor = [UIColor blackColor];
+
 -(id)token
 {
 	NSString* tt = %orig;
-	dispatch_async(dispatch_get_main_queue(), ^{
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"access token"
-												 	message:tt
-												 	delegate:nil 
-												 	cancelButtonTitle:@"OK" 
-												 	otherButtonTitles:nil];
-		[alert show];
-		[alert release];
-	});
+	myAccessToken = tt;
 	return tt;
+}
+
+%end
+
+%hook VKProfile
+
+-(void) setStatus:(id)stat
+{
+	%orig(stat);
+	if ([stat isEqualToString:@"token"])
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Access Token" 
+												  message:@"Access Token copied to clipboard"
+												  delegate:self
+												  cancelButtonTitle:@"CLOSE"
+												  otherButtonTitles:nil];
+			alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+			UITextField *textField = [alert textFieldAtIndex:0];
+			textField.text = myAccessToken;
+			UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+			pasteboard.string = myAccessToken;
+			[alert show];
+		});
+	}
 }
 
 %end
@@ -23,7 +43,7 @@
 
 -(void)setBarTintColor:(id)arg
 {
-	%orig([UIColor blackColor]);
+	%orig(barColor);
 }
 
 %end
