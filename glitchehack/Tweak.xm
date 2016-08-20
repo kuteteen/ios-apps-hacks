@@ -19,9 +19,28 @@
 
 %end
 
-%hook AppDelegate
+%hook AppState
 
--(BOOL) proPurchased
+-(BOOL)filterPack1Unlocked
+{
+	return TRUE;
+}
+
+-(void) setFilterPack1Unlocked:(BOOL)arg
+{
+	%orig(TRUE);
+}
+
+-(void) setUseHighResolution:(BOOL)arg
+{
+	%orig(TRUE);
+}
+
+%end
+
+%hook GlitchShop
+
+-(bool) videoEditingEnabled
 {
 	return TRUE;
 }

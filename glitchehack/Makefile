@@ -3,8 +3,9 @@ export THEOS_DEVICE_PORT=22
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = CuteCutHack
-CuteCutHack_FILES = Tweak.xm
-CuteCutHack_FRAMEWORKS = UIKit
+TWEAK_NAME = GlitcheHack
+GlitcheHack_FILES = Tweak.xm
+GlitcheHack_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+

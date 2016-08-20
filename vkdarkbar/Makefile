@@ -3,8 +3,9 @@ export THEOS_DEVICE_PORT=22
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = CuteCutHack
-CuteCutHack_FILES = Tweak.xm
+TWEAK_NAME = VKDarkBar
+VKDarkBar_FILES = Tweak.xm
+VKDarkBar_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

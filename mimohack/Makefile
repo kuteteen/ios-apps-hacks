@@ -5,8 +5,6 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = MimoHack
 MimoHack_FILES = Tweak.xm
+MimoHack_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-
-after-install::
-	install.exec "killall -9 Mimo"

@@ -9,5 +9,5 @@ Hack Tweaks for iOS apps
  - [ ] SwiftBites - Learn How to Code in Swift with Interactive Mini Lessons
  - [ ] Code! Learn how to program - Swift Version
  - [X] Cute Cut
- - [ ] Glitché
+ - [X] Glitché
 
