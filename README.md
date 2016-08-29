@@ -10,4 +10,7 @@ Hack Tweaks for iOS apps
  - [ ] Code! Learn how to program - Swift Version
  - [X] Cute Cut
  - [X] Glitché
+ - [X] Lazy Tool 2
+ - [X] VSCO
+
 
