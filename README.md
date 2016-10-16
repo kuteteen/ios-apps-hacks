@@ -12,5 +12,6 @@ Hack Tweaks for iOS apps
  - [X] Glitché
  - [X] Lazy Tool 2
  - [X] VSCO
+ - [X] InstaLikes User changer
 
 

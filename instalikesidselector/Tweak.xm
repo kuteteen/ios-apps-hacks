@@ -7,22 +7,22 @@
 	BOOL Enabled = FALSE;
 	NSString* IDText = @"";
 	NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.slaviknychkalo.instalikes.plist"];
-    if(prefs)
-    {
-        Enabled = ( [prefs objectForKey:@"EnableSwitch"] ? [[prefs objectForKey:@"EnableSwitch"] boolValue] : Enabled );
-        IDText = ( [prefs objectForKey:@"IDText"] ? [prefs objectForKey:@"IDText"] : IDText );
-        [IDText retain];
-    }
-    [prefs release];
-    
-    if (Enabled)
-    {
-	    NSError* error;
+	if(prefs)
+	{
+		Enabled = ( [prefs objectForKey:@"EnableSwitch"] ? [[prefs objectForKey:@"EnableSwitch"] boolValue] : Enabled );
+		IDText = ( [prefs objectForKey:@"IDText"] ? [prefs objectForKey:@"IDText"] : IDText );
+		[IDText retain];
+	}
+	[prefs release];
+	
+	if (Enabled)
+	{
+		NSError* error;
 		NSString* url_string = [NSString stringWithFormat: @"https://www.instagram.com/%@/?__a=1", IDText];
 		NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
 		NSMutableArray* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 		NSString* user = [json valueForKeyPath: @"user.id"];
-	    return user;
+		return user;
 	}
 	return %orig;
 }
@@ -32,16 +32,16 @@
 	BOOL Enabled = FALSE;
 	NSString* IDText = @"";
 	NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.slaviknychkalo.instalikes.plist"];
-    if(prefs)
-    {
-        Enabled = ( [prefs objectForKey:@"EnableSwitch"] ? [[prefs objectForKey:@"EnableSwitch"] boolValue] : Enabled );
-        IDText = ( [prefs objectForKey:@"IDText"] ? [prefs objectForKey:@"IDText"] : IDText );
-        [IDText retain];
-    }
-    [prefs release];
+	if(prefs)
+	{
+		Enabled = ( [prefs objectForKey:@"EnableSwitch"] ? [[prefs objectForKey:@"EnableSwitch"] boolValue] : Enabled );
+		IDText = ( [prefs objectForKey:@"IDText"] ? [prefs objectForKey:@"IDText"] : IDText );
+		[IDText retain];
+	}
+	[prefs release];
 
-    if (Enabled)
-    {
+	if (Enabled)
+	{
 		NSError* error;
 		NSString* url_string = [NSString stringWithFormat: @"https://www.instagram.com/%@/?__a=1", IDText];
 		NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
