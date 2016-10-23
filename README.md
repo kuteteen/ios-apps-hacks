@@ -1,5 +1,5 @@
 # ios-apps-hacks
-Hack Tweaks for iOS apps
+Hack Tweaks for iOS apps by Slavik Nychkalo
 
 # APPS
  - [x] Mimo: Learn how to code through interactive tutorials and quizzes!
